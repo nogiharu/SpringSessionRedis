@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta  charset="UTF-8">
+        <title>session</title>
+    </head>
+    <body>
+        <form action="/" method="post" th:object="${sessionModel}">
+            [ID]<input type="text" th:field="*{id}"><br>
+            [名前]<input type="text" th:field="*{name}">
+            <input type="submit">
+        </form>
+        <div th:if="${session.sessionModel != null}">
+        <p th:text="${'[名前]' + session.sessionModel.name}"></p>
+        <p th:text="${'[ID]' + session.sessionModel.id}"></p>
+        <!-- <p th:text="${'[serialID]' + id}"></p> -->
+    </div>
+    </body>
+</html>
